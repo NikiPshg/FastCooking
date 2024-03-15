@@ -10,25 +10,27 @@ response = requests.get(link)
 soup = BeautifulSoup(response.text, 'lxml')
 block = soup.find('article', class_ = 'item-bl item-about')
 
-#Название рецепта
-name_recipe = block.find('h1', itemprop = 'name').text
-
+# #Название рецепта
+# name_recipe = block.find('h1', itemprop = 'name').text
+# print(name_recipe)
+#
 # #Картинка
 # block_image = block.find('div', class_ = 'm-img')
 # image_link = block_image.find('img').get('src')
 # image = requests.get(f'{image_link}').content # придумать название для картинки а также придумать как можно создавать папки
 # with open(f'image/{27}.jpg', 'wb') as file:
 #     file.write(image)
-
-# Мини описание
-descrip = block.find('div', class_ = 'article-text')
-text_des = descrip.find('p').text
-
-
+#
+# # Мини описание
+# descrip = block.find('div', class_ = 'article-text')
+# text_des = descrip.find('p').text
+# print(text_des)
+#
+#
 # #Ингредиенты
 # ingr = block.find_all('h2')[0].text
 # print(ingr)
-
+#
 # #Список ингредиентов
 # block_ingr = block.find('div', class_= 'ingredients-bl')
 # spisoc = block_ingr.find_all('li', itemprop = 'recipeIngredient')
@@ -39,8 +41,8 @@ text_des = descrip.find('p').text
 #             print(f'{food[i].text} {food[i+1].text}')
 #     else:
 #         print(f'{food[0].text}') # В дальнейшем составить список и добавлять в основной список рецептов
-
-
+#
+#
 # #Пошаговое описание (название)
 # step_name = block.find_all('h2')[-1].text
 # print(step_name)
