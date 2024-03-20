@@ -2,59 +2,84 @@ import requests
 import fake_useragent
 from bs4 import BeautifulSoup
 
-
-#1000 28554
-link = 'https://www.povarenok.ru/recipes/show/1000/'
+# 1000 28554
+link = 'https://www.povarenok.ru/recipes/show/164365/'
 response = requests.get(link)
 
+# Забираем страницу и делаем преобразование в lxml, после чего сразу берем основной блок
 soup = BeautifulSoup(response.text, 'lxml')
-block = soup.find('article', class_ = 'item-bl item-about')
+block = soup.find('article', class_='item-bl item-about')
 
-# #Название рецепта
-# name_recipe = block.find('h1', itemprop = 'name').text
-# print(name_recipe)
-#
-# #Картинка
-# block_image = block.find('div', class_ = 'm-img')
-# image_link = block_image.find('img').get('src')
-# image = requests.get(f'{image_link}').content # придумать название для картинки а также придумать как можно создавать папки
-# with open(f'image/{27}.jpg', 'wb') as file:
-#     file.write(image)
-#
-# # Мини описание
-# descrip = block.find('div', class_ = 'article-text')
-# text_des = descrip.find('p').text
-# print(text_des)
-#
-#
-# #Ингредиенты
-# ingr = block.find_all('h2')[0].text
-# print(ingr)
-#
-# #Список ингредиентов
-# block_ingr = block.find('div', class_= 'ingredients-bl')
-# spisoc = block_ingr.find_all('li', itemprop = 'recipeIngredient')
-# for sp in spisoc:
-#     food = sp.find_all('span')
-#     if len(food) > 1:
-#         for i in range(len(food)-1):
-#             print(f'{food[i].text} {food[i+1].text}')
-#     else:
-#         print(f'{food[0].text}') # В дальнейшем составить список и добавлять в основной список рецептов
-#
-#
-# #Пошаговое описание (название)
-# step_name = block.find_all('h2')[-1].text
-# print(step_name)
+# Название рецепта
+name_recipe = block.find('h1', itemprop='name').text
+print(name_recipe)
 
-#Пошаговое описание
-step_desc = block.findAll('div')[10].text #доработать правильный вывод пошагового текста
-print(step_desc)
+# Картинка
+block_image = block.find('div', class_='m-img')
+image_link = block_image.find('img').get('src')
+image = requests.get(
+    f'{image_link}').content  # придумать название для картинки, а также придумать как можно создавать папки
+with open(f'image/{27}.jpg', 'wb') as file:
+    file.write(image)
+
+# Мини описание
+descrip = block.find('div', class_='article-text')
+text_des = descrip.find('p').text
+print(text_des)
+
+# Ингредиенты
+ingr = block.find_all('h2')[0].text
+print(ingr)
+
+# Список ингредиентов
+block_ingr = block.find('div', class_='ingredients-bl')
+spisoc = block_ingr.find_all('li', itemprop='recipeIngredient')
+a = []
+for sp in spisoc:
+    food = sp.find_all('span')
+    if len(food) > 1:
+        for i in range(len(food) - 1):
+            a.append(f'{food[i].text} {food[i + 1].text}')
+    else:
+        a.append(f'{food[0].text}')  # В дальнейшем составить список и добавлять в основной список рецептов
+print(a)
 
 
+# Пошаговое описание (название)
+step_name = block.find_all('h2')[-1].text
+print(step_name)
 
 
+# Пошаговое описание
+# Функция удаления тегов
+def delete_div(code, tag, arg):
+    for div in code.find_all(tag, arg):
+        div.decompose()
 
+
+# Перечисление всех не нужных аргументов и последующее их удаление (сократить и добавить в цикл)
+delete_div(block, 'span', '')
+delete_div(block, 'td', '')
+delete_div(block, 'tr', '')
+delete_div(block, 'img', '')
+delete_div(block, 'script', '')
+delete_div(block, 'div', {'class': 'article-tags', 'id': 'tags-recipes-01'})
+delete_div(block, 'div', {'class': 'ingredients-bl'})
+delete_div(block, 'href', '')
+delete_div(block, 'a', '')
+delete_div(block, 'div', {'class': 'to-comments'})
+delete_div(block, 'div', {'class': 'article-header'})
+delete_div(block, 'div', {'class': 'user-info-main'})
+delete_div(block, 'div', {'class': 'm-img'})
+delete_div(block, 'div', {'class': 'article-text'})
+delete_div(block, 'div', {'class': 'article-breadcrumbs'})
+delete_div(block, 'h1', '')
+delete_div(block, 'h2', '')
+delete_div(block, 'div', {'itemprop': 'nutrition'})
+
+step_desc = block.text.split()
+step_desc_proc = ' '.join(step_desc)  # Полностью обработан и выводит в string, если нужен список, то .split()
+print(step_desc_proc)
 
 
 # cookies = {
