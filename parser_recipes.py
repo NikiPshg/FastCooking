@@ -65,7 +65,7 @@ with open(txt_file_path, mode='r') as txt_file, open(csv_file_path, mode='w', ne
             block_image = block.find('div', class_='m-img')
             image_link = block_image.find('img').get('src')
             image = requests.get(
-                f'{image_link}').content  # придумать название для картинки, а также придумать как можно создавать папки
+                f'{image_link}').content
             with open(f'image/{number}.jpg', 'wb') as file:
                 file.write(image)
 
@@ -86,7 +86,7 @@ with open(txt_file_path, mode='r') as txt_file, open(csv_file_path, mode='w', ne
                     for i in range(len(food) - 1):
                         foods.append(f'{food[i].text} {food[i + 1].text}')
                 else:
-                    foods.append(f'{food[0].text}')  # В дальнейшем составить список и добавлять в основной список рецептов
+                    foods.append(f'{food[0].text}')
 
             # Пошаговое описание (название)
             step_name = block.find_all('h2')[-1].text
