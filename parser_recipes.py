@@ -118,7 +118,6 @@ with open(txt_file_path, mode='r') as txt_file, open(csv_file_path, mode='w', ne
             delete_div(block, 'h1', '')
             delete_div(block, 'h2', '')
             delete_div(block, 'div', {'itemprop': 'nutrition'})
-
             step_desc = block.text.split()
             step_desc_proc = ' '.join(step_desc)  # Полностью обработан и выводит в string, если нужен список, то .split()
 
