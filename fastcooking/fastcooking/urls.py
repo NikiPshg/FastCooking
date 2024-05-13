@@ -4,7 +4,6 @@ from recipes.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/drf-auth/', include('rest_framework.urls')),
     path('api/v1/recipe/', RecipesAPIList.as_view()),
     path('api/v1/recipe/<int:pk>/', RecipesAPIUpdate.as_view()),
     path('api/v1/recipedelete/<int:pk>/', RecipesAPIDestroy.as_view()),
