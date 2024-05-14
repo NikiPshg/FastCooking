@@ -9,7 +9,8 @@ urlpatterns = [
     path('api/v1/recipedelete/<int:pk>/', RecipesAPIDestroy.as_view()),
     path('api/v1/auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')), 
-    re_path(r'^search/', RecipeModelListView.as_view(), name='recipemodel-list'),
+    path('search/', RecipesViewSet.as_view({'get': 'list'}), name='recipes-list'),
+    
 ]
 
 #сделать фильтр овощи,мясо,рыба

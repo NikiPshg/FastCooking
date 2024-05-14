@@ -10,7 +10,7 @@ class Recipes(models.Model):
     ingr = models.TextField()  # Список ингредиентов
     stepname = models.CharField(max_length=255)  # Подзаголовок рецепта (к названию просто добавилось слово рецепт)
     stepdish = models.TextField()  # Пошаговое приготовление
-    category = models.CharField(max_length=2)
+    category = models.CharField(max_length=1) # категория
 
     def __str__(self):
         return self.namedish
