@@ -10,6 +10,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from django_filters import rest_framework as django_filters,filters
 from django_filters import rest_framework as filters
 from django.db.models.functions import Lower
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 
 
@@ -69,3 +71,19 @@ class RecipesViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = RecipesFilter
+# ml
+class SearchRecipeView(APIView):
+    def post(self, request):
+        user_input = request.data.get('ingredients', [])  # Получаем список ингредиентов из POST-запроса
+
+        matching_recipes = []
+        all_recipes = Recipes.objects.all()  # Получаем все рецепты из базы данных
+
+        for recipe in all_recipes:
+            recipe_ingredients = eval(recipe.ingr)  # Преобразуем строку в список ингредиентов
+
+            if all(ingredient in user_input for ingredient in recipe_ingredients):
+                serializer = RecipeSerializer(recipe)  # Сериализуем найденный рецепт
+                matching_recipes.append(serializer.data)
+
+        return Response(matching_recipes)

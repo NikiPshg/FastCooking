@@ -10,8 +10,9 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')), 
     path('search/', RecipesViewSet.as_view({'get': 'list'}), name='recipes-list'),
+    path('search-recipe/', SearchRecipeView.as_view(), name='search_recipe'),
     
 ]
 
-#сделать фильтр овощи,мясо,рыба
+#сделать фильтр овощи,мясо,рыбаs
 
