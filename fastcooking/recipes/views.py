@@ -1,23 +1,53 @@
+from django.http import Http404
 from rest_framework import generics
 from rest_framework import viewsets
-#from django.shortcuts import render
-from .models import Recipes
-from .serializers import RecipeSerializer
+# from django.shortcuts import render
+from .models import Recipes, Image
+from .serializers import RecipeSerializer, RecipeImageSerializer
 from .permissions import *
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
-from django_filters import rest_framework as django_filters,filters
+from django_filters import rest_framework as django_filters, filters
 from django_filters import rest_framework as filters
 from django.db.models.functions import Lower
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
+class RecipeImageView(APIView):
+    def get(self, request):
+        dish_id = request.query_params.get('dishid')
+        try:
+            recipe_image = Image.objects.get(dish_id=dish_id)
+            serializer = RecipeImageSerializer(recipe_image)
+            return Response(serializer.data)
+        except Image.DoesNotExist:
+            return Response({'error': 'Image not get'}, status=404)
+    def post(self, request):
+        dish_id = request.data.get('dishid')
+        try:
+            recipe_image = Image.objects.get(dish_id=dish_id)
+            serializer = RecipeImageSerializer(recipe_image)
+            return Response(serializer.data)
+        except Image.DoesNotExist:
+            return Response({'error': 'Image not found'}, status=404)
+
+    def put(self, request):
+        dish_id = request.data.get('dishid')
+        image = request.data.get('image')
+
+        if not dish_id or not image:
+            return Response({'error': 'dishid and image noot found'}, status=402)
+        try:
+            recipe_image = Image.objects.create(dish_id=dish_id, image=image)
+            return Response({'message': 'Image uploaded'}, status=201)
+        except Exception as e:
+            return Response({'error': str(e)}, status=404)
 
 
 
-#фильтр, поиск
+# фильтр, поиск
 class RecipesFilter(filters.FilterSet):
     namedish = filters.CharFilter(field_name='namedish', method='filter_namedish')
 
@@ -27,7 +57,9 @@ class RecipesFilter(filters.FilterSet):
     class Meta:
         model = Recipes
         fields = ['namedish']
-#фильтрация категории
+
+
+# фильтрация категории
 class CategoryFilter(django_filters.FilterSet):
     category = django_filters.CharFilter(method='filter_by_category')
 
@@ -42,11 +74,14 @@ class CategoryFilter(django_filters.FilterSet):
             return queryset.filter(category='2')
         else:
             return queryset.none()  # Возвращаем пустой queryset, если значение не "1" или "2"
-#пагинация
+
+
+# пагинация
 class PaginationRecipe(PageNumberPagination):
     page_size = 7
     page_size_query_param = 'page_size'
     max_page_size = 100
+
 
 class RecipesAPIList(generics.ListCreateAPIView):
     queryset = Recipes.objects.all()
@@ -56,21 +91,26 @@ class RecipesAPIList(generics.ListCreateAPIView):
     filterset_class = CategoryFilter
     pagination_class = PaginationRecipe
 
+
 class RecipesAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer
     permission_classes = [IsAdminOrReadOnly]
+
 
 class RecipesAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer
     permission_classes = [IsAdminOrReadOnly]
 
+
 class RecipesViewSet(viewsets.ModelViewSet):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = RecipesFilter
+
+
 # ml
 class SearchRecipeView(APIView):
     def post(self, request):

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'django_filters',
+    'ml.apps.MlConfig',
 ]
 
 MIDDLEWARE = [
@@ -124,10 +125,23 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# myproject/settings.py
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+ROBOFLOW_API_URL = os.getenv('ROBOFLOW_API_URL')
+ROBOFLOW_API_KEY = os.getenv('ROBOFLOW_API_KEY')
+
 
 REST_FRAMEWORK = {
     'DEFAUL_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
