@@ -1,0 +1,167 @@
+.frame1-container{
+    height: 100%;
+    background: linear-gradient(180deg, rgba(166, 212, 193, 1) 0%, rgba(236, 243, 240, 1) 100%);
+    background-size: 170%;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Days One', bold;
+    box-sizing: border-box;
+}
+.login-form{
+    width: 690px;
+    background: #E7F6F0;
+    height: 869px;
+    padding: 0px 76px;
+    border-radius: 60px;
+    border-color: #3E5240;
+    border-style: solid;
+    border-width: 3px;
+    position: absolute;
+    left: 50%;
+    top: 480px;
+    transform: translate(-50%,-50%);
+}
+
+.login-form h1{
+    text-align: center;
+    font-size: 48px;
+    margin-top: 31px;
+    color: #3E5340;
+}
+
+.text{
+    border-bottom: 2px solid #888D88;
+    position: relative;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+.text input{
+    font-size: 18px;
+    color: black;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+}
+
+.text span::before{
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #888D88;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s;
+}
+
+.text span::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(120deg,#f64259, #f39a3d);
+    transition: .5s;
+    bottom: -2px;
+    left: 0;
+}
+
+.focus + span::before{
+    top: -3px;
+}
+.focus + span::after{
+    width: 100%;
+    bottom: -2px;
+    left: 0;
+}
+
+.button{
+    display: block;
+    width: 536px;
+    height: 110px;
+    border: none;
+    position: absolute;
+    left: 74px;
+    bottom: 135px;
+    background: linear-gradient(120deg,rgba(166, 212, 193, 1),rgba(236, 243, 240, 1),rgba(166, 212, 193, 1));
+    background-size: 200%;
+    color: #3E5340;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 35px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 8px 2px rgba(34, 60, 80, 0.2);
+}
+
+.button:hover{
+    background-position: right;
+}
+.bottom-text{
+    color: #888D88;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 250px;
+}
+.bottom-text a{
+    color: #3E5340;
+}
+
+.login-form a::after{
+    content:'';
+    display: flex;
+    width: 0%;
+    margin-left: 61.7%;
+    height: 2px;
+    background: #3E5340;
+    opacity: 0;
+    transition: 0.50s ease;
+}
+.login-form a:hover::after{
+    opacity: 1;
+    width: 15.8%;
+}
+.text1{
+    margin: 30px 0px 5px 0px;
+    font-size: 26px;
+    color: #888D88;
+}
+
+
+.text span::before{
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s;
+}
+
+.text span::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(120deg,#f64259, #f39a3d);
+    transition: .5s;
+    bottom: -2px;
+    left: 0;
+}
+
+.focus + span::before{
+    top: -3px;
+}
+.focus + span::after{
+    width: 100%;
+    bottom: -2px;
+    left: 0;
+}
+input[type="text"]:focus ~ .text{
+    @apply text-blue-500 transform -translate-y-9;
+}
