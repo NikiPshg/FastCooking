@@ -1,16 +1,19 @@
-.frame1-container{
+body{
     height: 100%;
     background: linear-gradient(180deg, rgba(166, 212, 193, 1) 0%, rgba(236, 243, 240, 1) 100%);
+}
+.frame1-container_log{
     margin: 0;
     padding: 0;
     text-decoration: none;
     font-family: 'Days One', bold;
     box-sizing: border-box;
 }
-.reg-form{
+
+.login-form{
     width: 690px;
     background: #E7F6F0;
-    height: 869px;
+    height: 689px;
     padding: 0px 76px;
     border-radius: 60px;
     border-color: #3E5240;
@@ -23,21 +26,33 @@
     box-shadow: 0px 7px 4px 0px rgba(34, 60, 80, 0.2);
 }
 
-.reg-form h1{
+.login-form h1{
     text-align: center;
+    margin-bottom: 13px;
+    margin-top: 28px;
     font-size: 48px;
-    margin-top: 31px;
     color: #3E5340;
 }
-
-.text{
-    border-bottom: 3px solid #888D88;
+.text2{
     position: relative;
     font-size: 26px;
-    margin-bottom: 40px;
+    margin: 20px 0 0 0;
+    color: #888D88;
+}
+.text3{
+    position: relative;
+    font-size: 26px;
+    margin: 60px 0 0 0;
+    color: #888D88;
+}
+.text_log{
+    border-bottom: 3px solid #888D88;
+    position: relative;
+    margin: 10px 0 0 0;
+    font-size: 26px;
 }
 
-.text input{
+.text_log input{
     font-size: 20px;
     color: black;
     border: none;
@@ -47,54 +62,49 @@
     padding: 0 5px;
     height: 40px;
 }
-.button{
+.button_log{
     display: block;
     width: 536px;
     height: 110px;
     border: none;
-    position: absolute;
-    left: 74px;
-    bottom: 135px;
     background: linear-gradient(120deg,rgba(166, 212, 193, 1),rgba(236, 243, 240, 1),rgba(166, 212, 193, 1));
     background-size: 200%;
     color: #3E5340;
+    font-size: 35px;
     outline: none;
     cursor: pointer;
     transition: .5s;
-    font-size: 35px;
     border-radius: 50px;
     box-shadow: 0px 5px 8px 2px rgba(34, 60, 80, 0.2);
+    position: absolute;
+    bottom: 173px;
 }
-.button:hover{
+.button_log:hover{
     background-position: right;
 }
-.bottom-text{
-    color: #888D88;
+.bottom-text_log{
+    position: absolute;
+    bottom: 72px;
     text-align: center;
     font-size: 25px;
-    margin-top: 250px;
+    color: #888D88;
+    margin-left: 18px;
 }
-.bottom-text a{
+.bottom-text_log a{
     color: #3E5340;
 }
-
-.reg-form a::after{
+.login-form a::after{
     content:'';
     display: flex;
     width: 0%;
-    margin-left: 61.7%;
+    margin-left: 42.4%;
     height: 3px;
     border-radius: 3px;
     background: #3E5340;
     opacity: 0;
     transition: 0.5s ease;
 }
-.reg-form a:hover::after{
+.login-form a:hover::after{
     opacity: 1;
-    width: 15.8%;
-}
-.text1{
-    margin: 30px 0px 5px 0px;
-    font-size: 26px;
-    color: #888D88;
+    width: 57.5%;
 }

@@ -9,14 +9,16 @@ const Frame1 = (props) => {
     <div className="frame1-container">
       <Helmet>
         <title>Fast Cooking</title>
+        <link rel="icon" href="star17.svg" type="image/x-icon"/>
         <style>
           @import url('https://fonts.cdnfonts.com/css/days-one');
         </style>
+        <script src="https://kit.fontawesome.com/9b617fddaa.js" crossOrigin="anonymous"></script>
       </Helmet>
       <div className="frame1-frame1">
         <img src="/fluentmdl2eatdrink6056-2zx.svg"
-          alt="fluentmdl2eatdrink6056"
-          className="frame1-fluentmdl2eatdrink"
+             alt="fluentmdl2eatdrink6056"
+             className="frame1-fluentmdl2eatdrink"
         />
         <span className="frame1-text">
           <span>Рецепты FastCooking</span>
@@ -39,17 +41,17 @@ const Frame1 = (props) => {
           <span>Отзывы наших клиентов</span>
         </span>
         <img
-          src="/ellipse16057-jeks-200h.png"
-          alt="Ellipse16057"
-          className="frame1-ellipse1"
+            src="/ellipse16057-jeks-200h.png"
+            alt="Ellipse16057"
+            className="frame1-ellipse1"
         />
         <span className="frame1-text18">
           <span>Матвей Лень</span>
         </span>
         <img
-          src="/rectangle56057-43ju-400h.png"
-          alt="Rectangle56057"
-          className="frame1-rectangle5"
+            src="/rectangle56057-43ju-400h.png"
+            alt="Rectangle56057"
+            className="frame1-rectangle5"
         />
         <span className="frame1-text20">
           <span>Сайт очень удобный, подобрал своей</span>
@@ -57,18 +59,18 @@ const Frame1 = (props) => {
           <span>
             бабушке рецепты, а то надоело постоянно
             <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
+                dangerouslySetInnerHTML={{
+                  __html: ' ',
+                }}
             />
           </span>
           <br></br>
           <span>
             есть подгоревший омлет,
             <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
+                dangerouslySetInnerHTML={{
+                  __html: ' ',
+                }}
             />
           </span>
           <br></br>
@@ -76,48 +78,68 @@ const Frame1 = (props) => {
           <br></br>
           <span>Спасибо!</span>
         </span>
+        <div className="stars1">
+          <img
+              src="/star13.png"
+              className="stars1-star1"
+          />
+          <img
+              src="/star13.png"
+              className="stars1-star2"
+          />
+          <img
+              src="/star13.png"
+              className="stars1-star3"
+          />
+          <img
+              src="/star13.png"
+              className="stars1-star4"
+          />
+          <img
+              src="/star13.png"
+              className="stars1-star5"
+          />
+        </div>
+
+        <div className="stars2">
+          <img
+              src="/star13.png"
+              className="stars2-star1"
+          />
+          <img
+              src="/star13.png"
+              className="stars2-star2"
+          />
+          <img
+              src="/star13.png"
+              className="stars2-star3"
+          />
+          <img
+              src="/star13.png"
+              className="stars2-star4"
+          />
+          <img
+              src="/star13.png"
+              className="stars2-star5"
+          />
+        </div>
         <img
-          src="/star76057-bxo.svg"
-          alt="Star76057"
-          className="frame1-star7"
+            src="/vector16058-m0gc.svg"
+            alt="Vector16058"
+            className="frame1-vector1"
         />
         <img
-          src="/star116057-rvh.svg"
-          alt="Star116057"
-          className="frame1-star11"
-        />
-        <img
-          src="/star86057-ztv.svg"
-          alt="Star86057"
-          className="frame1-star8"
-        />
-        <img
-          src="/star96058-xe9.svg"
-          alt="Star96058"
-          className="frame1-star9"
-        />
-        <img
-          src="/vector16058-m0gc.svg"
-          alt="Vector16058"
-          className="frame1-vector1"
-        />
-        <img
-          src="/star106058-kng.svg"
-          alt="Star106058"
-          className="frame1-star10"
-        />
-        <img
-          src="/rectangle66058-xxw8-400h.png"
-          alt="Rectangle66058"
-          className="frame1-rectangle6"
+            src="/rectangle66058-xxw8-400h.png"
+            alt="Rectangle66058"
+            className="frame1-rectangle6"
         />
         <span className="frame1-text30">
           <span>
             Отличный сайт для тех, кто не любит
             <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
+                dangerouslySetInnerHTML={{
+                  __html: ' ',
+                }}
             />
           </span>
           <br></br>
@@ -126,9 +148,9 @@ const Frame1 = (props) => {
           <span>
             Просто загрузи фото доступных
             <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
+                dangerouslySetInnerHTML={{
+                  __html: ' ',
+                }}
             />
           </span>
           <br></br>
@@ -141,56 +163,32 @@ const Frame1 = (props) => {
           <br></br>
           <span></span>
         </span>
+
         <img
-          src="/star126058-jwuh.svg"
-          alt="Star126058"
-          className="frame1-star12"
+            src="/vector26059-fang.svg"
+            alt="Vector26059"
+            className="frame1-vector2"
         />
         <img
-          src="/star136058-lzv.svg"
-          alt="Star136058"
-          className="frame1-star13"
-        />
-        <img
-          src="/star146058-98e.svg"
-          alt="Star146058"
-          className="frame1-star14"
-        />
-        <img
-          src="/star156058-9q6o.svg"
-          alt="Star156058"
-          className="frame1-star15"
-        />
-        <img
-          src="/vector26059-fang.svg"
-          alt="Vector26059"
-          className="frame1-vector2"
-        />
-        <img
-          src="/star166059-j8ao.svg"
-          alt="Star166059"
-          className="frame1-star16"
-        />
-        <img
-          src="/ellipse26059-k1d-200h.png"
-          alt="Ellipse26059"
-          className="frame1-ellipse2"
+            src="/ellipse26059-k1d-200h.png"
+            alt="Ellipse26059"
+            className="frame1-ellipse2"
         />
         <span className="frame1-text44">
-          <span>Какаят девка</span>
+          <span>Никифорова Екатерина</span>
         </span>
         <img
-          src="/rectangle166059-9d09-500h.png"
-          alt="Rectangle166059"
-          className="frame1-rectangle16"
+            src="/rectangle166059-9d09-500h.png"
+            alt="Rectangle166059"
+            className="frame1-rectangle16"
         />
         <span className="frame1-text46">
           <span>Мясо</span>
         </span>
         <img
-          src="/rectangle17button6059-e5ne-500h.png"
-          alt="Rectangle17button6059"
-          className="frame1-rectangle17button"
+            src="/rectangle17button6059-e5ne-500h.png"
+            alt="Rectangle17button6059"
+            className="frame1-rectangle17button"
         />
 
         <div className="header">
@@ -207,22 +205,21 @@ const Frame1 = (props) => {
           />
           <input
               className="frame1-rectangle13"
+              type="search"
+              placeholder="Выбрать рецепт"
           />
-          <a className="frame1-text48" href="**">
+          <a className="frame1-text48" href="login">
             Войти
           </a>
           <a className="frame1-text50" href="reg">
             Регистрация
           </a>
-          <span className="frame1-text52">
-          Выбрать рецепт
-          </span>
           <img
               src="/ellipse46051-vdcm-200h.png"
               alt="Ellipse46051"
               className="frame1-ellipse4"
           />
-          <a className="frame1-text59" href="#">
+          <a className="frame1-text59" href="#About1">
             О сайте
           </a>
         </div>
@@ -236,23 +233,17 @@ const Frame1 = (props) => {
 
         <img
             src="/rectangle196051-kprf-200h.png"
-          alt="Rectangle196051"
-          className="frame1-rectangle19"
+            alt="Rectangle196051"
+            className="frame1-rectangle19"
         />
+        <ul className="widgets">
+          <a href="tg" className="fa fa-telegram"></a>
+          <a href="vk" className="fa fa-vk"></a>
+        </ul>
         <img
-          src="/rivkfill6051-26nc.svg"
-          alt="rivkfill6051"
-          className="frame1-rivkfill"
-        />
-        <img
-          src="/icbaselinetelegram6051-vayej.svg"
-          alt="icbaselinetelegram6051"
-          className="frame1-icbaselinetelegram"
-        />
-        <img
-          src="/biccircle6051-pxnv.svg"
-          alt="biccircle6051"
-          className="frame1-biccircle"
+            src="/biccircle6051-pxnv.svg"
+            alt="biccircle6051"
+            className="frame1-biccircle"
         />
         <span className="frame1-text61">
           <span>FastCooking, 2024</span>
@@ -261,33 +252,29 @@ const Frame1 = (props) => {
           <span>
             Если возникли какие-то
             <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
+                dangerouslySetInnerHTML={{
+                  __html: ' ',
+                }}
             />
           </span>
           <br></br>
           <span>проблемы, свяжитесь с нами</span>
         </span>
         <span className="frame1-text67">
-          <span>Верх</span>
+          <span>Вверх</span>
         </span>
+        <a className="link" href="#">
+        </a>
         <img
-          src="/ellipse36051-dbvc-200h.png"
-          alt="Ellipse36051"
-          className="frame1-ellipse3"
-        />
-        <img
-          src="/arrow46051-weze.svg"
-          alt="Arrow46051"
-          className="frame1-arrow4"
+          src="arrow.png"
+          className="arrow"
         />
         <span className="frame1-text69">
           <span>Рыба</span>
         </span>
         <input
-          type="file"
-          className="frame1-rectangle15"
+            type="file"
+            className="frame1-rectangle15"
         />
         <span className="frame1-text71">
           <span>Загрузи фото продуктов</span>
@@ -295,10 +282,11 @@ const Frame1 = (props) => {
           <span>и получи рецепт мечты!</span>
         </span>
         <img
-          src="/vector6051-akij.svg"
-          alt="Vector6051"
-          className="frame1-vector"
+            src="/vector6051-akij.svg"
+            alt="Vector6051"
+            className="frame1-vector"
         />
+        <div className="about" id="About1"></div>
       </div>
     </div>
   )

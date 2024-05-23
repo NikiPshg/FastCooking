@@ -11,6 +11,7 @@ import './style.css'
 import Frame1 from './views/frame1'
 import NotFound from './views/not-found'
 import Reg from './views/reg'
+import Login from './views/login'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
     <Switch>
       <Route component={Frame1} exact path="/" className={''}/>
       <Route component={Reg} exact path="/reg" />
+      <Route component={Login} exact path="/login" />
       <Route component={NotFound} exact path="**" />
       <Redirect to="**" />
     </Switch>

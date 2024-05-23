@@ -1,6 +1,5 @@
 html, body{
   overflow-x:hidden;
-  background-color: red;
   font-family: "Days One";
   height: 100%;
 }
@@ -122,46 +121,11 @@ html, body{
   font-stretch: normal;
   text-decoration: none;
 }
-.frame1-star7 {
-  top: 1980px;
-  left: 151px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
-.frame1-star11 {
-  top: 1980px;
-  left: 511px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
-.frame1-star8 {
-  top: 1980px;
-  left: 241px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
-.frame1-star9 {
-  top: 1980px;
-  left: 331px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
 .frame1-vector1 {
   top: 2001px;
   left: 88px;
   width: 100px;
   height: 152px;
-  position: absolute;
-}
-.frame1-star10 {
-  top: 1980px;
-  left: 419px;
-  width: 90px;
-  height: 90px;
   position: absolute;
 }
 .frame1-rectangle6 {
@@ -198,46 +162,11 @@ html, body{
   font-stretch: normal;
   text-decoration: none;
 }
-.frame1-star12 {
-  top: 1987px;
-  left: 1051px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
-.frame1-star13 {
-  top: 1987px;
-  left: 1409px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
-.frame1-star14 {
-  top: 1987px;
-  left: 1141px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
-.frame1-star15 {
-  top: 1987px;
-  left: 1229px;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
 .frame1-vector2 {
   top: 2001px;
   left: 988px;
   width: 100px;
   height: 152px;
-  position: absolute;
-}
-.frame1-star16 {
-  top: 1987px;
-  left: 1321px;
-  width: 90px;
-  height: 90px;
   position: absolute;
 }
 .frame1-ellipse2 {
@@ -250,7 +179,7 @@ html, body{
 .frame1-text44 {
   top: 2210px;
   left: 1100px;
-  color: rgba(0, 0, 0, 1);
+  color: #3E5240;
   height: auto;
   position: absolute;
   font-size: 30px;
@@ -280,6 +209,7 @@ html, body{
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
+  pointer-events: none;
 }
 .frame1-rectangle17button {
   top: 400px;
@@ -305,8 +235,24 @@ html, body{
   border-radius: 100px;
   outline: none;
   background-color: #D9D9D9;
+  text-indent: 100px;
+  caret-color: #3E5240;
+  color: #3E5240;
+  caret-width: 10px;
+  font-size: 25px;
 }
 
+.frame1-rectangle13::placeholder{
+  color: #888D88;
+  position: absolute;
+  left: 20px;
+  top: 19px;
+  font-size: 35px;
+  transition: .3s;
+}
+.frame1-rectangle13:focus::placeholder{
+  opacity: 0;
+}
 .frame1-rectangle1 {
   top: 43px;
   left: 1413px;
@@ -318,9 +264,8 @@ html, body{
   border-width: 1px;
   border-radius: 255px;
 }
-.frame1-text48 {
-  top: 42px;
-  left: 1408px;
+.frame1-text48{
+  left: 1403px;
   color: rgba(50, 67, 52, 1);
   height: auto;
   position: absolute;
@@ -333,11 +278,14 @@ html, body{
   border-color: #88b39f;
   border-width: 2px;
   box-shadow: 0px 0px 3px 3px #88b39f;
-
+  transition: .2s;
 }
-.frame1-text50 {
+.frame1-text48:hover{
+  transform: scale(1.02);
+}
+.frame1-text50{
   top: 43px;
-  left: 1595px;
+  left: 1590px;
   color: rgba(255, 255, 255, 1);
   height: auto;
   position: absolute;
@@ -350,20 +298,10 @@ html, body{
   padding: 19px 25px;
   border-radius: 40px;
   box-shadow: 0px 0px 5px 3px #3E5240;
+  transition: .2s;
 }
-.frame1-text52 {
-  top: 62px;
-  left: 542px;
-  color: rgba(163, 154, 154, 1);
-  height: auto;
-  position: absolute;
-  font-size: 35px;
-  text-align: left;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-  user-select: none;
+.frame1-text50:hover{
+  transform: scale(1.02);
 }
 .frame1-ellipse4 {
   top: 62px;
@@ -430,20 +368,6 @@ html, body{
   height: 171px;
   position: absolute;
 }
-.frame1-rivkfill {
-  top: 2548px;
-  left: 304px;
-  width: 75px;
-  height: 75px;
-  position: absolute;
-}
-.frame1-icbaselinetelegram {
-  top: 2548px;
-  left: 190px;
-  width: 75px;
-  height: 75px;
-  position: absolute;
-}
 .frame1-biccircle {
   top: 2583px;
   left: 792px;
@@ -479,7 +403,7 @@ html, body{
 }
 .frame1-text67 {
   top: 2638px;
-  left: 1735px;
+  left: 1729px;
   color: rgba(152, 144, 144, 1);
   height: auto;
   position: absolute;
@@ -489,20 +413,6 @@ html, body{
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
-}
-.frame1-ellipse3 {
-  top: 2557px;
-  left: 1726px;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-}
-.frame1-arrow4 {
-  top: 2632px;
-  left: 1766px;
-  width: 75px;
-  height: 1px;
-  position: absolute;
 }
 .frame1-text69 {
   top: 426px;
@@ -516,6 +426,7 @@ html, body{
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
+  pointer-events: none;
 }
 .frame1-rectangle15 {
   top: 400px;
@@ -526,9 +437,14 @@ html, body{
   border-radius: 100px;
   background: linear-gradient(180deg, rgba(166, 212, 193, 1) 0%, rgba(236, 243, 240, 1) 100%);
   box-shadow: 0px 8px 16px 2px rgba(34, 60, 80, 0.2);
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0);
+}
+.frame1-rectangle15::file-selector-button {
+  display: none;
 }
 .frame1-text71 {
-  top: 534px;
+  top: 530px;
   left: 737px;
   color: rgba(62, 82, 64, 1);
   width: 446px;
@@ -541,6 +457,8 @@ html, body{
   font-stretch: normal;
   text-decoration: none;
   text-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+  user-select: none;
+  pointer-events: none;
 }
 .frame1-vector {
   top: 407px;
@@ -548,12 +466,84 @@ html, body{
   width: 88px;
   height: 69px;
   position: absolute;
+  pointer-events: none;
 }
 .header{
   position: sticky;
+  display: flex;
+  align-items: center;
   top: 0;
   z-index: 9;
   background-color: #9acab6;
   height: 168px;
-  width: 100px;
+}
+.frame1-text59::after{
+  content:'';
+  display: flex;
+  width: 0%;
+  height: 9px;
+  border-radius: 5px;
+  background-color: #3E5240;
+  opacity: 0;
+  transition: 0.50s ease;
+}
+.frame1-text59:hover::after{
+  opacity: 1;
+  width: 85%;
+}
+.stars1{
+  position: absolute;
+  display: flex;
+  gap: 32px;
+  top: 2000px;
+  left: 165px;
+  z-index: 1;
+}
+.stars2{
+  position: absolute;
+  display: flex;
+  gap: 32px;
+  top: 2000px;
+  left: 1070px;
+  z-index: 1;
+}
+.widgets{
+  position: absolute;
+  top:2553px;
+  left: 195px;
+  display: flex;
+  font-size: 65px;
+  color: #3E5340;
+  gap: 57px;
+}
+.widgets a{
+  transition: .5s;
+}
+.widgets a:hover{
+  color: #9acab6;
+}
+.link{
+  position: absolute;
+  background-color: #D9D9D9;
+  padding: 40px;
+  border-radius: 40px;
+  z-index: 1;
+  top: 2557px;
+  left: 1726px;
+  transition: .5s;
+  box-shadow: 0px 6px 5px 0px rgba(34, 60, 80, 0.2);
+}
+.link:hover{
+  background-color: #3E5340;
+}
+.arrow{
+  position: absolute;
+  top: 2559px;
+  left: 1751px;
+  z-index: 1;
+  pointer-events: none;
+}
+.about{
+  position: absolute;
+  top: 800px;
 }
