@@ -7,6 +7,7 @@ from inference_sdk import InferenceHTTPClient
 import tempfile
 from PIL import Image
 
+
 class PredictView(APIView):
     def post(self, request):
         file = request.FILES['image']
