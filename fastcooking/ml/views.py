@@ -5,7 +5,7 @@ from rest_framework import status
 from django.conf import settings
 from inference_sdk import InferenceHTTPClient
 import tempfile
-from PIL import Image
+
 
 from recipes.models import Recipes  # Импортируем модель
 from recipes.serializers import RecipeSerializerML  # Импортируем сериализатор
@@ -42,8 +42,8 @@ class PredictView(APIView):
             # Поиск рецептов, которые содержат все совпадающие ингредиенты
             matching_recipes = []
             for recipe in Recipes.objects.all():
-                recipe_ingredients = set(recipe.ingr.split(','))
-                if set(translated_classes).issubset(recipe_ingredients):
+                recipe_ingredients = eval(recipe.ingr)
+                if all(ingredient in translated_classes for ingredient in recipe_ingredients):
                     matching_recipes.append(recipe)
 
             # Сериализация рецептов для ответа
