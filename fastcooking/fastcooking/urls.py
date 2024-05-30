@@ -11,7 +11,7 @@ from drf_spectacular.views import (
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('api/v1/urls/',include('recipes.urls')),
+                  path('api/v1/',include('recipes.urls')),
                   path('api/v1/ml_images/', include('ml.urls')),
                   path('api/v1/auth/', include('djoser.urls')),
                   re_path(r'^auth/', include('djoser.urls.authtoken')),
