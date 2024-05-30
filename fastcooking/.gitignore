@@ -1,0 +1,5 @@
+*.env
+recipes\__pycache__\
+*.log
+*.pot
+*.pyc
