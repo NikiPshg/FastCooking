@@ -1,2 +1,2 @@
 # FastCooking
-BVT2302 students 
+BVT2302 Students

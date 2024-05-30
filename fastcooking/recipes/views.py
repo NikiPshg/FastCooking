@@ -14,7 +14,7 @@ from django.db.models.functions import Lower
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-
+#работа с изображениями
 class RecipeImageView(APIView):
     def get(self, request):
         dish_id = request.query_params.get('dishid')

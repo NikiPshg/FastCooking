@@ -18,9 +18,8 @@ class RecipeSerializer(serializers.ModelSerializer):
         model = Recipes
         fields = "__all__"
 
-# class ImageFileSerializer(serializers.ModelSerializer):
-#     image = serializers.ImageField(max_length=None, use_url=True)
-#
-#     class Meta:
-#         model = ImageFile
-#         fields = ['image', 'image_key']
+
+class RecipeSerializerML(serializers.ModelSerializer):
+    class Meta:
+        model = Recipes
+        fields = "__all__"
