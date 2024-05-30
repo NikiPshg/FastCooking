@@ -37,7 +37,7 @@ class PredictView(APIView):
 
             # Перевод уникальных классов на русский
             translator = Translator()
-            translated_classes = [translator.translate(cls, src='en', dest='ru').text for cls in unique_classes]
+            translated_classes = [translator.translate(cls, src='en', dest='ru').text.capitalize() for cls in unique_classes]
 
             # Поиск рецептов, которые содержат все совпадающие ингредиенты
             matching_recipes = []
