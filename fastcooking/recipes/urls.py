@@ -1,8 +1,6 @@
 # myapp/urls.py
 from django.urls import path
-from .views import *
-from django.conf.urls.static import static
-from django.conf import settings
+from .views import RecipesAPIDestroy,RecipeURLView, RecipesAPIList, RecipesAPIUpdate, RecipeImageView, RecipesViewSet
 urlpatterns = [
                   path('urls/',RecipeURLView.as_view()),
                   path('recipe/', RecipesAPIList.as_view()),
