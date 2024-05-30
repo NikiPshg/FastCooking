@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'djoser',
     'django_filters',
     'ml.apps.MlConfig',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -153,6 +154,7 @@ ROBOFLOW_API_KEY = os.getenv('ROBOFLOW_API_KEY')
 
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAUL_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     
     'DEFAULT_RENDERER_CLASSES': [

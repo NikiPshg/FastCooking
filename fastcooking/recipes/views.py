@@ -45,6 +45,17 @@ class RecipeImageView(APIView):
         except Exception as e:
             return Response({'error': str(e)}, status=404)
 
+class RecipeURLView(APIView):
+    def get(self, request):
+        recipes = Recipes.objects.all()
+        image_urls = []
+        categories = []  
+        for recipe in recipes:  
+            image_url = f"http://127.0.0.1:8000/media/recipe_images/{recipe.dishid}.jpg"
+            image_urls.append(image_url)
+            category = recipe.category
+            categories.append(category)  # Добавляем категорию в список
+        return Response({'image_urls': image_urls, 'categories': categories})
 
 # фильтр, поиск
 class RecipesFilter(filters.FilterSet):
@@ -83,6 +94,8 @@ class PaginationRecipe(PageNumberPagination):
 
 
 # работа с рецептами
+    
+
 class RecipesAPIList(generics.ListCreateAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer
