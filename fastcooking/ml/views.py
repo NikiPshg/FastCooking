@@ -8,6 +8,8 @@ import tempfile
 from recipes.models import Recipes  # Импортируем модель
 from recipes.serializers import RecipeSerializerML  # Импортируем сериализатор
 from googletrans import Translator
+from collections import Counter
+
 
 
 class PredictView(APIView):
@@ -42,7 +44,8 @@ class PredictView(APIView):
             matching_recipes = []
             for recipe in Recipes.objects.all():
                 recipe_ingredients = eval(recipe.ingr)
-                if all(ingredient in translated_classes for ingredient in recipe_ingredients):
+                matching_count = sum(ingredient in translated_classes for ingredient in recipe_ingredients)
+                if len(recipe_ingredients) - matching_count <= 1:
                     matching_recipes.append(recipe)
 
             # Сериализация рецептов для ответа
