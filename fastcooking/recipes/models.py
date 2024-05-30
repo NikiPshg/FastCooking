@@ -18,12 +18,7 @@ class Recipes(models.Model):
         return self.namedish
 
 
-# модель фильтра
-class Filter(models.Model):
-    name = models.CharField(max_length=100, db_index=True)
 
-    def __str__(self):
-        return self.name
 
 
 # модель изображений

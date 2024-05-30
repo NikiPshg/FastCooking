@@ -11,15 +11,10 @@ from drf_spectacular.views import (
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('api/v1/urls/',RecipeURLView.as_view()),
-                  path('api/v1/recipe/', RecipesAPIList.as_view()),
-                  path('api/v1/recipe/<int:pk>/', RecipesAPIUpdate.as_view()),
-                  path('api/v1/recipedelete/<int:pk>/', RecipesAPIDestroy.as_view()),
-                  path('api/v1/media/recipe_images/', RecipeImageView.as_view(), name='get_image'),
+                  path('api/v1/urls/',include('recipes.urls')),
                   path('api/v1/ml_images/', include('ml.urls')),
                   path('api/v1/auth/', include('djoser.urls')),
                   re_path(r'^auth/', include('djoser.urls.authtoken')),
-                  path('api/v1/search/', RecipesViewSet.as_view({'get': 'list'}), name='recipes-list'),
                   path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
                   path(
                         '',
