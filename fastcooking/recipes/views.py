@@ -1,7 +1,5 @@
-from django.http import Http404
 from rest_framework import generics
 from rest_framework import viewsets
-# from django.shortcuts import render
 from .models import Recipes, Image
 from .serializers import RecipeSerializer, RecipeImageSerializer
 from .permissions import *
@@ -14,7 +12,8 @@ from django.db.models.functions import Lower
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-#работа с изображениями
+
+# работа с изображениями
 class RecipeImageView(APIView):
     def get(self, request):
         dish_id = request.query_params.get('dishid')
@@ -24,6 +23,7 @@ class RecipeImageView(APIView):
             return Response(serializer.data)
         except Image.DoesNotExist:
             return Response({'error': 'Image not get'}, status=404)
+
     def post(self, request):
         dish_id = request.data.get('dishid')
         try:
@@ -44,7 +44,6 @@ class RecipeImageView(APIView):
             return Response({'message': 'Image uploaded'}, status=201)
         except Exception as e:
             return Response({'error': str(e)}, status=404)
-
 
 
 # фильтр, поиск
@@ -83,6 +82,7 @@ class PaginationRecipe(PageNumberPagination):
     max_page_size = 100
 
 
+# работа с рецептами
 class RecipesAPIList(generics.ListCreateAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer
@@ -92,18 +92,21 @@ class RecipesAPIList(generics.ListCreateAPIView):
     pagination_class = PaginationRecipe
 
 
+# работа с рецептами
 class RecipesAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer
     permission_classes = [IsAdminOrReadOnly]
 
 
+# работа с рецептами
 class RecipesAPIDestroy(generics.RetrieveDestroyAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer
     permission_classes = [IsAdminOrReadOnly]
 
 
+# работа с рецептами
 class RecipesViewSet(viewsets.ModelViewSet):
     queryset = Recipes.objects.all()
     serializer_class = RecipeSerializer

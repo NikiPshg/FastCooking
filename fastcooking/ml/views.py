@@ -5,8 +5,6 @@ from rest_framework import status
 from django.conf import settings
 from inference_sdk import InferenceHTTPClient
 import tempfile
-
-
 from recipes.models import Recipes  # Импортируем модель
 from recipes.serializers import RecipeSerializerML  # Импортируем сериализатор
 from googletrans import Translator
@@ -37,7 +35,8 @@ class PredictView(APIView):
 
             # Перевод уникальных классов на русский
             translator = Translator()
-            translated_classes = [translator.translate(cls, src='en', dest='ru').text.capitalize() for cls in unique_classes]
+            translated_classes = [translator.translate(cls, src='en', dest='ru').text.capitalize() for cls in
+                                  unique_classes]
 
             # Поиск рецептов, которые содержат все совпадающие ингредиенты
             matching_recipes = []
