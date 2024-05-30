@@ -20,7 +20,6 @@ urlpatterns = [
                   path('api/v1/auth/', include('djoser.urls')),
                   re_path(r'^auth/', include('djoser.urls.authtoken')),
                   path('api/v1/search/', RecipesViewSet.as_view({'get': 'list'}), name='recipes-list'),
-                  path('api/v1/search-recipe/', SearchRecipeView.as_view(), name='search_recipe'),
                   path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
                   path(
                         '',

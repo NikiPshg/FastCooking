@@ -15,15 +15,6 @@ from rest_framework.views import APIView
 
 # работа с изображениями
 class RecipeImageView(APIView):
-    def get(self, request):
-        dish_id = request.query_params.get('dishid')
-        try:
-            recipe_image = Image.objects.get(dish_id=dish_id)
-            serializer = RecipeImageSerializer(recipe_image)
-            return Response(serializer.data)
-        except Image.DoesNotExist:
-            return Response({'error': 'Image not get'}, status=404)
-
     def post(self, request):
         dish_id = request.data.get('dishid')
         try:
@@ -125,20 +116,3 @@ class RecipesViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = RecipesFilter
-
-# поиск
-class SearchRecipeView(APIView):
-    def post(self, request):
-        user_input = request.data.get('ingredients', [])  # Получаем список ингредиентов из POST-запроса
-
-        matching_recipes = []
-        all_recipes = Recipes.objects.all()  # Получаем все рецепты из базы данных
-
-        for recipe in all_recipes:
-            recipe_ingredients = eval(recipe.ingr)  # Преобразуем строку в список ингредиентов
-
-            if all(ingredient in user_input for ingredient in recipe_ingredients):
-                serializer = RecipeSerializer(recipe)  # Сериализуем найденный рецепт
-                matching_recipes.append(serializer.data)
-
-        return Response(matching_recipes)
