@@ -11,6 +11,7 @@ import Frame1 from './views/frame1'
 import NotFound from './views/not-found'
 import Reg from './views/reg'
 import Login from './views/login'
+import Meat from './views/meat'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,6 +30,7 @@ root.render(
                     <Route path="/" element={<Frame1/>} />
                     <Route path="/reg" element={<Reg/>} />
                     <Route path="/login" element={<Login/>} />
+                    <Route path="/meat" element={<Meat/>} />
                     <Route path="**"  element={<NotFound/>} />
                 </Routes>
         </div>

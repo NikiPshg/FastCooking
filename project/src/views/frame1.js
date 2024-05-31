@@ -182,11 +182,13 @@ function Frame1() {
               <span className="frame1-text44">
           <span>Никифорова Екатерина</span>
         </span>
+              <a href="http://localhost:3000/meat">
               <img
                   src="/rectangle166059-9d09-500h.png"
                   alt="Rectangle166059"
                   className="frame1-rectangle16"
               />
+              </a>
               <span className="frame1-text46">
           <span>Мясо</span>
         </span>
@@ -220,7 +222,7 @@ function Frame1() {
                       Регистрация
                   </a>
                   <img
-                      src="/ellipse46051-vdcm-200h.png"
+                      src="Lupa.png"
                       alt="Ellipse46051"
                       className="frame1-ellipse4"
                   />
@@ -275,8 +277,9 @@ function Frame1() {
                   className="arrow"
               />
               <span className="frame1-text69">
-          <span>Рыба</span>
-        </span>
+                <span className="frame1-text691">Здоровое</span>
+                <span className="frame1-text692">питание</span>
+            </span>
               <input
                   type="file"
                   className="frame1-rectangle15"
