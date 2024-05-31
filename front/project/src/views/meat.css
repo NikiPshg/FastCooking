@@ -1,0 +1,100 @@
+/* Общие стили для контейнера */
+.frame1-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Контейнер для картинки и текста */
+.meat-item {
+  flex-basis: calc(
+    50% - 10px
+  ); /* Ширина равна половине контейнера с учетом отступа */
+  margin-bottom: 20px;
+}
+
+/* Стили для картинки */
+.meat-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Стили для текста */
+.meat-text {
+  margin-top: 10px;
+}
+
+/* Стили для заголовка */
+.header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  top: 0;
+  z-index: 9;
+  background-color: #9acab6;
+  height: 168px;
+}
+
+.frame1-text54::after {
+  content: "";
+  display: flex;
+  width: 0%;
+  height: 9px;
+  border-radius: 5px;
+  background-color: #3e5240;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.frame1-text54:hover::after {
+  opacity: 1;
+  width: 85%;
+}
+
+/* Дополнительные стили */
+.cool {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Стили для поисковой строки */
+.frame1-rectangle131 {
+  top: 43px;
+  left: 401px;
+  width: 735px;
+  height: 82px;
+  position: absolute;
+  border-radius: 100px;
+  outline: none;
+  background-color: #d9d9d9;
+  text-indent: 100px;
+  caret-color: #3e5240;
+  color: #3e5240;
+  caret-width: 10px;
+  font-size: 25px;
+}
+
+.frame1-rectangle131::placeholder {
+  color: #888d88;
+  position: absolute;
+  left: 20px;
+  top: 19px;
+  font-size: 35px;
+  transition: 0.3s;
+}
+
+.frame1-rectangle131:focus::placeholder {
+  opacity: 0;
+}
+
+/* Стили для лупы */
+.frame1-ellipse41 {
+  position: absolute;
+  top: 55px;
+  left: 1174px;
+  width: 45px;
+  height: 45px;
+}

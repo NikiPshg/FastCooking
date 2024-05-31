@@ -1,0 +1,100 @@
+.frame1-container{
+    height: 100%;
+    background: linear-gradient(180deg, rgba(166, 212, 193, 1) 0%, rgba(236, 243, 240, 1) 100%);
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Days One', bold;
+    box-sizing: border-box;
+}
+.reg-form{
+    width: 690px;
+    background: #E7F6F0;
+    height: 869px;
+    padding: 0px 76px;
+    border-radius: 60px;
+    border-color: #3E5240;
+    border-style: solid;
+    border-width: 3px;
+    position: absolute;
+    left: 50%;
+    top: 480px;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 7px 4px 0px rgba(34, 60, 80, 0.2);
+}
+
+.reg-form h1{
+    text-align: center;
+    font-size: 48px;
+    margin-top: 31px;
+    color: #3E5340;
+}
+
+.text{
+    border-bottom: 3px solid #888D88;
+    position: relative;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+.text input{
+    font-size: 20px;
+    color: black;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+}
+.button{
+    display: block;
+    width: 536px;
+    height: 110px;
+    border: none;
+    position: absolute;
+    left: 74px;
+    bottom: 135px;
+    background: linear-gradient(120deg,rgba(166, 212, 193, 1),rgba(236, 243, 240, 1),rgba(166, 212, 193, 1));
+    background-size: 200%;
+    color: #3E5340;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 35px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 8px 2px rgba(34, 60, 80, 0.2);
+}
+.button:hover{
+    background-position: right;
+}
+.bottom-text{
+    color: #888D88;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 250px;
+}
+.bottom-text a{
+    color: #3E5340;
+}
+
+.reg-form a::after{
+    content:'';
+    display: flex;
+    width: 0%;
+    margin-left: 61.7%;
+    height: 3px;
+    border-radius: 3px;
+    background: #3E5340;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+.reg-form a:hover::after{
+    opacity: 1;
+    width: 15.8%;
+}
+.text1{
+    margin: 30px 0px 5px 0px;
+    font-size: 26px;
+    color: #888D88;
+}
