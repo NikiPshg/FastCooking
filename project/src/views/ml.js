@@ -1,48 +1,50 @@
 import React from "react";
-import axios from "axios";
-import {useState, useEffect} from 'react';
-import { Helmet } from 'react-helmet';
+import { useLocation } from "react-router-dom";
+import "./ml.css";
 
-import './ml.css';
+const MLResultsPage = () => {
+  const location = useLocation();
+  const { predictionData } = location.state || {};
 
+  if (!predictionData || !predictionData.classes) {
+    return <div>Данные предсказания недоступны.</div>;
+  }
 
-const Ml = (props) => {
-
-    return (
-        <div className="frame1-container3">
-            <Helmet>
-                <title>Fast Cooking</title>
-                <link rel="icon" href="star17.svg" type="image/x-icon"/>
-                <style>
-                    @import url('https://fonts.cdnfonts.com/css/days-one');
-                </style>
-            </Helmet>
-
-            <div className="header3">
-                <span className="frame1-text54">
-                <span className="frame1-text55">Fast</span>
-                <br></br>
-                <span className="frame1-text57"></span>
-                <span>Cooking</span>
-            </span>
-                <img
-                    src="star17.svg"
-                    alt="Star16051"
-                    className="frame1-star1"
-                />
-                <input
-                    className="frame1-rectangle133"
-                    type="search"
-                    placeholder="Выбрать рецепт"
-                />
-                <img
-                    src="Lupa.png"
-                    alt="Ellipse46051"
-                    className="frame1-ellipse43"
-                />
+  return (
+    <div className="ml-container">
+      <h2>Результат предсказания:</h2>
+      <ul className="classes-list">
+        {predictionData.classes.map((className, index) => (
+          <li key={index} className="class-item">
+            {className}
+          </li>
+        ))}
+      </ul>
+      <h3>Подходящие рецепты:</h3>
+      <div className="recipes-grid">
+        {predictionData.matching_recipes.map((recipe, index) => (
+          <div key={index} className="recipe-card">
+            <h4>{recipe.namedish}</h4>
+            <div className="image-container">
+              <img
+                src={`http://127.0.0.1:8000/media/recipe_images/${recipe.dishid}.jpg`}
+                alt={recipe.namedish}
+                className="recipe-image"
+              />
             </div>
-        </div>
-    )
-}
+            <p>{recipe.description}</p>
+            <p>{recipe.stepdish}</p>
+            <h5>Ингредиенты:</h5>
+            <ul className="ingredients-list">
+              {JSON.parse(recipe.ingr).map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Ml;
+export default MLResultsPage;
