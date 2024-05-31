@@ -1,22 +1,25 @@
 import './frame1.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-const src = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test"
+import {useNavigate} from 'react-router-dom';
+
 function Frame1() {
 
     const [selectedFile, setSelectedFile] = useState(null);
+    const history = useNavigate();
 
     const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
-    };
+        const file = event.target.files[0];
+        setSelectedFile(file);
 
-    const handleUpload = () => {
         const formData = new FormData();
-        formData.append('file', selectedFile);
+        formData.append('file', file);
 
         axios.put('http://127.0.0.1:8000/api/v1/media/recipe_images/', formData)
             .then(response => {
                 console.log('File uploaded successfully:', response.data);
+                // Переход на другую страницу после успешной загрузки файла
+                history.push("http://localhost:3000/meat");
             })
             .catch(error => {
                 console.error('Error uploading file:', error);
@@ -261,15 +264,13 @@ function Frame1() {
         </span>
                 <span className="frame1-text63">
           <span>
-            Если возникли какие-то
+            Оставьте отзыв!
             <span
                 dangerouslySetInnerHTML={{
                     __html: ' ',
                 }}
             />
           </span>
-          <br></br>
-          <span>проблемы, свяжитесь с нами</span>
         </span>
                 <span className="frame1-text67">
           <span>Вверх</span>
@@ -284,12 +285,13 @@ function Frame1() {
                 <span className="frame1-text691">Здоровое</span>
                 <span className="frame1-text692">питание</span>
             </span>
-                <input
-                    type="file"
-                    className="frame1-rectangle15"
-                    onChange={handleFileChange}
-                />
-                <button onClick={handleUpload}>Upload</button>
+                <a href="http://localhost:3000/meat">
+                    <input
+                        type="file"
+                        className="frame1-rectangle15"
+                        onChange={handleFileChange}
+                    />
+                </a>
                 <span className="frame1-text71">
           <span>Загрузи фото продуктов</span>
           <br></br>

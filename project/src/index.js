@@ -12,6 +12,7 @@ import NotFound from './views/not-found'
 import Reg from './views/reg'
 import Login from './views/login'
 import Meat from './views/meat'
+import Ml from "./views/ml";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +32,7 @@ root.render(
                     <Route path="/reg" element={<Reg/>} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/meat" element={<Meat/>} />
+                    <Route path="/ml" element={<Ml/>} />
                     <Route path="**"  element={<NotFound/>} />
                 </Routes>
         </div>
