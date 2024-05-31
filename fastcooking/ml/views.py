@@ -30,7 +30,7 @@ class PredictView(APIView):
 
         # Предсказание
         try:
-            result = client.infer(temp_image_path, model_id="eat-69w8e/3")
+            result = client.infer(temp_image_path, model_id="eat-69w8e/6")
 
             # Извлечение уникальных классов из предсказаний
             unique_classes = list(set(prediction['class'] for prediction in result['predictions']))
