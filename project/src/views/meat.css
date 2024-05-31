@@ -1,8 +1,53 @@
-.frame1-container1{
-    height: 1000%;
-    background-color: red;
+.frame1-container{
+    height: 200%;
 }
 .text-form{
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
     height: 1000%;
-    background-color: blue;
+    background: linear-gradient(180deg, rgba(166, 212, 193, 1) 0%, rgba(236, 243, 240, 1) 100%);
+}
+.image{
+    width: 400px;
+    height: 400px;
+    margin: 200px 50px 0px 150px;
+    border-radius: 50px;
+    transition: .5s;
+}
+.image:hover{
+    scale: 1.03;
+}
+.frame1-rectangle131{
+    top: 43px;
+    left: 601px;
+    width: 735px;
+    height: 82px;
+    position: absolute;
+    border-radius: 100px;
+    outline: none;
+    background-color: #D9D9D9;
+    text-indent: 100px;
+    caret-color: #3E5240;
+    color: #3E5240;
+    caret-width: 10px;
+    font-size: 25px;
+}
+
+.frame1-rectangle131::placeholder{
+    color: #888D88;
+    position: absolute;
+    left: 20px;
+    top: 19px;
+    font-size: 35px;
+    transition: .3s;
+}
+.frame1-rectangle131:focus::placeholder{
+    opacity: 0;
+}
+.frame1-ellipse41{
+    top: 62px;
+    left: 635px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
 }
