@@ -2,7 +2,6 @@ import './frame1.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 const src = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test"
-//qajdwekidqwja
 function Frame1() {
 
     const [articles, setArticles] = useState([]);
